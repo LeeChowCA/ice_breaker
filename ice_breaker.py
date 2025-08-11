@@ -1,6 +1,7 @@
 import os
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
 
 
 # Load environment variables from .env file
@@ -32,7 +33,8 @@ if __name__ == "__main__":
         input_variables=["information"], template=summary_template  # because we have one variable, and variable can be anything, so we need to add double quotes here
     )
 
-    llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    # llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+    llm = ChatOllama(model="llama3.1", temperature=0)  # Using Ollama's Llama 3.1 model
 
     chain = summary_prompt_template | llm
 

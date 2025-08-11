@@ -34,7 +34,7 @@ if __name__ == "__main__":
     )
 
     # llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
-    llm = ChatOllama(model="llama3.1", temperature=0)  # Using Ollama's Llama 3.1 model
+    llm = ChatOllama(model="llama3", temperature=0)  # Using Ollama's Llama 3.1 model
 
     chain = summary_prompt_template | llm
 
